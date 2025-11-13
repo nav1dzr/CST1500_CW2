@@ -29,11 +29,14 @@ else:
     print(f"Default time quantum of {time_quantum} will be used.")
 
 
+hh
+
 
 # see if user wants to set arrival times or use default
 choice = input("Do you want to set arrival time? (y/n): ").lower()
 if choice == 'y':
     arrival_time = []
+
     for i in range(num_processes):
         at = int(input(f"Enter arrival time for process {i + 1}: "))
         arrival_time.append(at)
