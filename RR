@@ -27,11 +27,7 @@ if choice_q == 'y':
     time_quantum = int(input("Enter your desired time quantum: "))
 else:
     print(f"Default time quantum of {time_quantum} will be used.")
-
-
-hh
-
-
+    
 # see if user wants to set arrival times or use default
 choice = input("Do you want to set arrival time? (y/n): ").lower()
 if choice == 'y':

@@ -1,0 +1,41 @@
+# start of program, First-Come, First-Served (FCFS) CPU Scheduling Algorithm Implementation
+def fcfs():
+    print("----- FCFS CPU Scheduling -----")
+
+    # Ask user for number of processes
+    n = int(input("Enter number of processes: "))
+
+    process_id = []
+    burst_time = []
+
+    # Collect burst times
+    for i in range(n):
+        pid = i + 1
+        bt = int(input(f"Enter burst time for Process {pid}: "))
+        process_id.append(pid)
+        burst_time.append(bt)
+
+    waiting_time = [0] * n
+    turnaround_time = [0] * n
+
+    # FCFS waiting time calculation
+    for i in range(1, n):
+        waiting_time[i] = waiting_time[i-1] + burst_time[i-1]
+
+    # Turnaround time = burst time + waiting time
+    for i in range(n):
+        turnaround_time[i] = burst_time[i] + waiting_time[i]
+
+    # Print results
+    print("\nProcess | Burst Time | Waiting Time | Turnaround Time")
+    print("--------------------------------------------------------")
+
+    for i in range(n):
+        print(f"{process_id[i]:7} | {burst_time[i]:10} | {waiting_time[i]:12} | {turnaround_time[i]:15}")
+
+    # Averages
+    avg_wait = sum(waiting_time) / n
+    avg_tat  = sum(turnaround_time) / n
+
+    print("\nAverage Waiting Time:", round(avg_wait, 2))
+    print("Average Turnaround Time:", round(avg_tat, 2))
