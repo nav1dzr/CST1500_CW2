@@ -39,3 +39,6 @@ def fcfs():
 
     print("\nAverage Waiting Time:", round(avg_wait, 2))
     print("Average Turnaround Time:", round(avg_tat, 2))
+
+# Run the FCFS scheduling function
+fcfs()
